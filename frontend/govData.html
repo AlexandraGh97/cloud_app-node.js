@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Open Data - Guvernul Romaniei</title>
+        <h1> Open Data - Guvernul Romaniei</h1>
+        <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+.button1 {
+ background-color: #e7e7e7; 
+  color: black; 
+ border: 2px solid #008CBA;
+  /*width:250px;*/
+  text-align: center;
+  
+}
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+    </head>
+    <body style="background-color:MintCream;">
+         <button class ="button2" onclick = "getInfo()">Vizualizeaza informatii despre principalele domenii de activitate din Romania</button>
+        <!-- <button id="but1" onclick = "getInfo2()">Test</button>-->
+        <div id="content">
+            
+        </div>
+        <script type="text/javascript">
+         async function getInfo(){
+            //window.onload = async()=>{
+                let url = `http://demo.datagov.dataware.ro:5000/api/3/action/group_list`
+                let response = await fetch(url)
+                let data = await response.json()
+                console.log(data)
+                let list = document.createElement('table')
+                list.className='table'
+                let listItem0 = document.createElement('tr')
+                list.appendChild(listItem0)
+                //listItem0.innerHTML = 'Domain'
+                 let listItem1 = document.createElement('th')
+                listItem1.innerHTML = 'Domeniu'
+                list.appendChild(listItem1)
+                let listItem2 = document.createElement('th')
+                listItem2.innerHTML ='Detalii domeniu'
+                list.appendChild(listItem2)
+                
+                data.result.forEach((el)=>{
+                
+                    let listItem3 = document.createElement('tr')
+                    list.appendChild(listItem3)
+                    let listItem4 = document.createElement('td')
+                    listItem4.innerHTML = el
+                   
+                    list.appendChild(listItem4)
+                    let listItem5 = document.createElement('td')
+                    //listItem5.attributes = 'input type ="button" class="button button1" value="Get Info" name = "Get Info" onclick="getInfo2()"'
+                    listItem5.innerHTML = 'Vezi detalii'
+                    listItem5.className = 'button button1'
+                    list.appendChild(listItem5)
+                   listItem5.onclick = async function getInfo2() { 
+                       if (el=="agricultura-silvicultura-si-pescuit") {
+                    let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://www.moore.ro/sectors/test-sector`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   } else if(el=="finante"){
+                        let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://www.mfinante.gov.ro/pagina.html?pagina=acasa`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   } else if(el=="educatie-cultura-si-sport"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://ec.europa.eu/info/departments/education-youth-sport-and-culture_ro`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el=="energie"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://ro.wikipedia.org/wiki/Energia_electric%C4%83_%C3%AEn_Rom%C3%A2nia`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el =="politica"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://ro.wikipedia.org/wiki/Politica_Rom%C3%A2niei`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el =="drept"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://e-justice.europa.eu/home.do`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el=="mediu-inconjurator"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://ec.europa.eu/environment/index_en.htm`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el =="nomenclatoare"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://en.wikipedia.org/wiki/Nomenclator_(nomenclature)`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el =="orase-regiuni"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://upload.wikimedia.org/wikipedia/commons/b/b2/RPRhartaadm.png`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.image
+                   }else if(el =="probleme-sociale"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://ro.wikipedia.org/wiki/Categorie:Probleme_sociale`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el=="relatii-internationale"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://ro.wikipedia.org/wiki/Rela%C8%9Bii_interna%C8%9Bionale`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el=="sanatate"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=http://www.ms.ro`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el =="transport"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://ro.wikipedia.org/wiki/Transport`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }else if(el =="productie-tehnologie-si-cercetare"){
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=https://ec.europa.eu/info/research-and-innovation_ro`
+                    let response = await fetch(url)
+                 
+                     let data = await response.json()
+                    console.log(data)
+                    window.location.href = data.url
+                   }
+                   
+                   }
+                    
+                
+                })
+                document.getElementById('content').appendChild(list)
+               
+            }
+           
+        </script>
+    </body>
+</html>
