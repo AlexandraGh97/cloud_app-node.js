@@ -1,10 +1,11 @@
 const express = require("express")
 
 const app = express()
+var path = require('path');
 app.use('/',express.static('frontend')) 
 
 app.get('/',(req,res) => {
-  res.sendFile('/home/ubuntu/environment/cloud_app-node.js/frontend/govData.html')
+  res.sendFile(__dirname + '/frontend' + '/govData.html')
     
 })
 
