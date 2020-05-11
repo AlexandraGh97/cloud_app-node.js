@@ -49,6 +49,7 @@ tr:nth-child(even) {
             
         </div>
         <script type="text/javascript">
+        
          async function getInfo(){
             //window.onload = async()=>{
                 let url = `http://demo.datagov.dataware.ro:5000/api/3/action/group_list`
@@ -159,7 +160,7 @@ tr:nth-child(even) {
                     console.log(data)
                     window.location.href = data.url
                    }else if(el=="sanatate"){
-                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=http://www.ms.ro`
+                       let url = `http://api.linkpreview.net/?key=a5a1c94afcb7d06eeb35d488fbaab666&q=http://www.ms.ro/`
                     let response = await fetch(url)
                  
                      let data = await response.json()
