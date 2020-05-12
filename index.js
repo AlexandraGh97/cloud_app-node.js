@@ -9,6 +9,7 @@ app.get('/',(req,res) => {
 })
 
 
+process.setMaxListeners(0);
 app.use(express.json())
 app.use(express.urlencoded())
 app.listen(process.env.PORT||8080)

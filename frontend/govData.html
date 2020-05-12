@@ -43,16 +43,15 @@ tr:nth-child(even) {
 </style>
     </head>
     <body style="background-color:MintCream;">
-         <button class ="button2" onclick = "getInfo()">Vizualizeaza informatii despre principalele domenii de activitate din Romania</button>
+         <button class ="button2" id="bbb" onclick = "getInfo()">Vizualizeaza informatii despre principalele domenii de activitate din Romania</button>
         <!-- <button id="but1" onclick = "getInfo2()">Test</button>-->
         <div id="content">
             
         </div>
         <script type="text/javascript">
-        
-         async function getInfo(){
+            async function getInfo(){
             //window.onload = async()=>{
-                let url = `http://demo.datagov.dataware.ro:5000/api/3/action/group_list`
+                let url = "http://demo.datagov.dataware.ro:5000/api/3/action/group_list"
                 let response = await fetch(url)
                 let data = await response.json()
                 console.log(data)
