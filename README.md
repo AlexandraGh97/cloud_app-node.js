@@ -61,7 +61,7 @@ Metodele HTTP folosite sunt metode GET, acestea fiind utilizate pentru a solicit
 
 ## Erori intalnite
 * "429 Too many requests / rate limit exceede" 
-![]("/cloud_app-node.js/erori/err1.png")
+![Too many requests]("/cloud_app-node.js/erori/err1.png")
 
 Am rezolvat aceasta eroare consultand documentatia celui de-al doilea API si observand ca am depasit limita de 60 de accesari pe ora.
 
@@ -71,5 +71,6 @@ Am rezolvat aceasta eroare omorand toate procesele existente pe portul folosit d
 
 * "Mixed Content: The page at was loaded over HTTPS, but requested an insecure resource . This request has been blocked; the content must be served over HTTPS."
 
-![]("/cloud_app-node.js/erori/err2.JPG")
+![Mixed Content]("/cloud_app-node.js/erori/err2.JPG")
+
 Eroarea aparea doar la incercarea de a deschide aplicatia din Azure App Services. Am incercat sa mut request-ul pe backend, insa nu am reusit sa fac aplicatia functionala si din platforma Azure App Services.
