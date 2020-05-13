@@ -72,7 +72,7 @@ Am rezolvat aceasta eroare omorand toate procesele existente pe portul folosit d
 
 * "Mixed Content: The page at was loaded over HTTPS, but requested an insecure resource . This request has been blocked; the content must be served over HTTPS."
 
-![Too many requests](https://github.com/AlexandraGh97/cloud_app-node.js/blob/master/erori/err2.png)
+![Mixed Content](https://github.com/AlexandraGh97/cloud_app-node.js/blob/master/erori/err2.JPG)
 
 Eroarea aparea doar la incercarea de a deschide aplicatia din Azure App Services. Am incercat sa mut request-ul pe backend, insa nu am reusit. Aplicatia este functionala si de pe platforma Azure App Services, daca se modifica url-ul folosind "http://..." in loc de "https://...".
 
